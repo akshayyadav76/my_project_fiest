@@ -10,8 +10,31 @@ void main(){
 
 class MyApp extends StatelessWidget {
   @override
-  
   Widget build(BuildContext context) {
-    return Container();
+    return new MaterialApp(
+      title:"this app",
+      home: new HomePage(),
+    );
   }
 }
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      
+      appBar: new AppBar(
+        title: new Text("myapp"),
+      ),
+      body: new Center(child: new Text("this how "),),
+    );
+  }
+}
+
+
