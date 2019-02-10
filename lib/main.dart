@@ -31,8 +31,12 @@ class _HomePageState extends State<HomePage> {
 
   void _changedtext(){
 setState(() {
-  mytext ="now text chnaged ";
-
+  if(mytext.startsWith("n"))
+    {
+      mytext ="change to this new ";
+    }else {
+    mytext = "now text chnagedfgfggf  ";
+  }
 });
   }
 
@@ -41,10 +45,18 @@ setState(() {
       padding: const EdgeInsets.all(8.0),
       child: new Center(
         child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Text(mytext),
-            new RaisedButton(child: new Text("click"),
+            new Text(mytext, style: new TextStyle(
+              color: Colors.deepOrange,
+              fontSize: 40.0,
+            ),),
+            new RaisedButton(child: new Text("click" , style: new TextStyle(
+              color: Colors.cyanAccent,
+              fontSize: 30.0,
+            )),
               onPressed: _changedtext,
+              color: Colors.purpleAccent,
             )
           ],
         ),
