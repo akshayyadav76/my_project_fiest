@@ -1,24 +1,12 @@
-
 import 'package:flutter/material.dart';
-import 'package:my_project_fiest/app_screens/first_screen.dart';
+import 'package:my_project_fiest/app_screens/home.dart';
 
 
 void main(){
-  runApp(MyFlutterApp());
-}
+  runApp(MaterialApp(
+    title: "this",
 
-class MyFlutterApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
-        title: "dd",
-        home: Scaffold(
-          appBar: AppBar(title: Text("app bar"),),
-          body: FirstScreen()
-        )
-    );
-  }
-
-
+    home: HomePage(),
+    debugShowCheckedModeBanner: false,
+  ));
 }
