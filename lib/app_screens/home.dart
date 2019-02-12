@@ -7,7 +7,9 @@ class HomePage extends StatelessWidget {
       alignment: Alignment.center,
       color: Colors.cyan,
       child: Text("flight", textDirection: TextDirection.ltr,
-        style: TextStyle(decoration: TextDecoration.none, fontSize: 33 ),
+        style: TextStyle(decoration: TextDecoration.none,
+            fontSize: 33 , fontFamily: "Raleway",
+            fontWeight: FontWeight.w300),
 
       ),
      // width: 200.0,height: 200.0,
