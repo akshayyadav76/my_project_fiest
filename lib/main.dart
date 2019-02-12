@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
-
-void main() => runApp(MyApp() );//fat arrow notation
-
+import 'package:my_project_fiest/app_screens/first_screen.dart';
 
 
-class MyApp extends StatelessWidget {
+void main(){
+  runApp(MyFlutterApp());
+}
+
+class MyFlutterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(
-       appBar: AppBar(title: Text("appbar"), elevation: 15, actions: <Widget>[],),
-     // bottomNavigationBar: BottomAppBar(elevation: 20,notchMargin: 22,color: Colors.green,),
-      body: Card(child: Column(children: <Widget>[Image.asset("assets/tac.jpg"),Text("food ")],),),
-
-    ),);
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
+        title: "dd",
+        home: Scaffold(
+          appBar: AppBar(title: Text("app bar"),),
+          body: FirstScreen()
+        )
+    );
   }
 }
