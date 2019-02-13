@@ -31,7 +31,8 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
-  - assets/tac.jpg
+    - assets/tac.jpg
+    - images/Boruto.jpg
 
   fonts:
     - family: Raleway

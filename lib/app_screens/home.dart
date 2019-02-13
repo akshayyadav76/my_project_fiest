@@ -4,6 +4,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(child:   Container(
+      padding: EdgeInsets.only(top: 33),
       alignment: Alignment.center,
       color: Colors.cyan,
       child: Column(children: <Widget>[
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
                   fontStyle: FontStyle.italic),
 
             ),),
-            Expanded(child:  Text(" this what  we wont to do with this ", textDirection: TextDirection.ltr,
+            Expanded(child:  Text(" go to limit ", textDirection: TextDirection.ltr,
               style: TextStyle(decoration: TextDecoration.none,
                   fontSize: 33 , fontFamily: "Raleway",
                   fontWeight: FontWeight.w700,
@@ -42,6 +43,7 @@ class HomePage extends StatelessWidget {
             ),),
           ],
         ),
+        Boruto()
 
       ],),
 
@@ -50,5 +52,15 @@ class HomePage extends StatelessWidget {
 
     ),
     );
+  }
+}
+
+class Boruto extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    AssetImage assetImage =AssetImage("images/Boruto.jpg");
+    Image image=Image(image: assetImage, width: 300.0, height: 100,);
+
+    return Container(child: image);
   }
 }
