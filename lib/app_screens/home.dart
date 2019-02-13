@@ -43,7 +43,10 @@ class HomePage extends StatelessWidget {
             ),),
           ],
         ),
-        Boruto()
+        Container(child: Padding(padding: EdgeInsets.only(top: 44),
+    child:  Boruto(),),),
+        ButtonSet(),
+
 
       ],),
 
@@ -64,3 +67,25 @@ class Boruto extends StatelessWidget {
     return Container(child: image);
   }
 }
+
+
+class ButtonSet extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(child: RaisedButton
+      (color: Colors.red,
+        child: Text("set",style: TextStyle(fontSize: 33,fontFamily: "Raleway", fontWeight: FontWeight.w700), ),
+        elevation: 4,
+        onPressed: () => setValues(context)
+        ),);
+  }
+  void setValues(BuildContext context){
+    var dilog= AlertDialog(title: Text("this dilog"),
+    content: Text("value has been set "),);
+
+    showDialog(context: context, builder: (BuildContext context)=>  dilog
+    );
+  }
+
+}
+
