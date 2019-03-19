@@ -15,7 +15,7 @@ class _appState extends State<app> {
       money = money + 100;
     });
 
-  }
+  }//sdf
 
   @override
   Widget build(BuildContext context) {
