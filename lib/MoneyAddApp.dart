@@ -6,11 +6,15 @@ class app extends StatefulWidget {
   _appState createState() => _appState();
 }
 
+
 class _appState extends State<app> {
   int money = 100;
 
   addMoney(){
-    money = money + 100;
+    setState(() {
+      money = money + 100;
+    });
+
   }
 
   @override
@@ -22,11 +26,19 @@ class _appState extends State<app> {
   }
 
   Widget Money(){
-    return Container(
+    return Center(
+      //color: Colors.purple,
         child: Column(
+
           mainAxisAlignment: MainAxisAlignment.center,
+
           children: <Widget>[
-            Text("$money"),
+            Text(" $money", style: TextStyle(
+              color: money>1000 ? Colors.blue:Colors.green
+            ),
+
+            ),
+            SizedBox(height: 80,),
             RaisedButton(
               child: Text("add"),
               onPressed: addMoney
