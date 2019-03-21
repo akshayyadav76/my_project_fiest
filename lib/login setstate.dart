@@ -22,7 +22,7 @@ void erase(){
   user.text;
   setState(() {
     see= user.text;
-    user.runtimeType;
+
   });
  }
 
@@ -32,10 +32,26 @@ void erase(){
       child: ListView(
         children: <Widget>[
           SizedBox(height: 90,),
-          TextField(decoration: InputDecoration(hintText: "suer",
+
+          //ConstrainedBox(constraints: BoxConstraints.expand(width: 100,height: 100),child:
+
+           SingleChildScrollView(child:
+          TextField(
+            decoration: InputDecoration(hintText: "suer",
               border: OutlineInputBorder(),),
             controller: user,
-          ),
+            style: TextStyle(fontStyle: FontStyle.italic,fontSize: 20,color: Colors.purpleAccent ),
+            //keyboardType: TextInputType.multiline,
+            maxLines: 9,
+            focusNode: FocusNode(),
+            scrollPadding: EdgeInsets.all(0),
+            //scrollPadding: EdgeInsets.all(20),
+            textInputAction: TextInputAction.newline,
+           // onTap: (){Clipboard.},
+
+          ),),
+
+
           SizedBox(height: 40,),
           TextField(
             controller: clr,
@@ -48,6 +64,7 @@ void erase(){
               RaisedButton(child: Text("clr"),onPressed: erase,)
             ],
           ),
+
           SizedBox(height: 30,),
           Text("see$see")
         ],
