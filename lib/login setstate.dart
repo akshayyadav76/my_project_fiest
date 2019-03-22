@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:clipboard_manager/clipboard_manager.dart';
+import 'package:flutter/services.dart';
+import 'dart:async';
 
 
 class LoginSet extends StatefulWidget {
@@ -28,28 +31,58 @@ void erase(){
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Scaffold( appBar: AppBar(title: Text("copy"),),
+        body: Center(
       child: ListView(
         children: <Widget>[
+
           SizedBox(height: 90,),
 
           //ConstrainedBox(constraints: BoxConstraints.expand(width: 100,height: 100),child:
 
-           SingleChildScrollView(child:
+
           TextField(
             decoration: InputDecoration(hintText: "suer",
               border: OutlineInputBorder(),),
             controller: user,
-            style: TextStyle(fontStyle: FontStyle.italic,fontSize: 20,color: Colors.purpleAccent ),
+            style: TextStyle(fontSize: 20,color: Colors.purpleAccent,
+              fontFamily: "DancingScript"
+            ),
             //keyboardType: TextInputType.multiline,
-            maxLines: 9,
+            maxLines: 6,
             focusNode: FocusNode(),
             scrollPadding: EdgeInsets.all(0),
             //scrollPadding: EdgeInsets.all(20),
             textInputAction: TextInputAction.newline,
            // onTap: (){Clipboard.},
 
-          ),),
+          ),
+          RaisedButton
+            (child: Text("copy"),
+
+
+              onPressed: () {
+              ClipboardData(text: user.text,);
+
+//              Clipboard.getData();
+//              Scaffold.of(context).showSnackBar(SnackBar(content: Text("copy")));
+
+              
+              
+             // ClipboardData data =await Clipboard.getData("text/plain");
+
+//            ClipboardManager.copyToClipBoard(user.text).then((result) {
+//              final snackBar = SnackBar(
+//                content: Text('Copied to Clipboard'),
+//                action: SnackBarAction(
+//                  label: 'Undo',
+//                  onPressed: () {},
+//                ),
+//              );
+//              Scaffold.of(context).showSnackBar(snackBar);
+//            });
+          }
+            ),
 
 
           SizedBox(height: 40,),
@@ -61,7 +94,10 @@ void erase(){
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(child: Text("login"),onPressed: log ,),
-              RaisedButton(child: Text("clr"),onPressed: erase,)
+              RaisedButton(child: Text("clr"),onPressed: erase,),
+              IconButton(icon: Icon(Icons.add,color: Colors.black,),onPressed: (){
+
+              },),
             ],
           ),
 
@@ -69,6 +105,6 @@ void erase(){
           Text("see$see")
         ],
       ),
-    );
+    ));
   }
 }
