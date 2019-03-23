@@ -31,6 +31,17 @@ void erase(){
 
   @override
   Widget build(BuildContext context) {
+
+
+    Future<ClipboardData> getData(String format) async {
+      final Map<String, dynamic> result = await SystemChannels.platform.invokeMethod(
+        user.text, format,
+
+      );
+//      if (result == null)
+  //      return result;
+      return ClipboardData(text: result[user.text]);
+    }
     return Scaffold( appBar: AppBar(title: Text("copy"),),
         body: Center(
       child: ListView(
@@ -61,14 +72,19 @@ void erase(){
             (child: Text("copy"),
 
 
-              onPressed: () {
-              ClipboardData(text: user.text,);
+              onPressed: () { getData("DancingScript-Bold.ttf");
+
+
+
+              //Clipboard.getData("DancingScript-Bold.ttf")async{}
+
+
+
+         //     ClipboardData(text: user.text,);
 
 //              Clipboard.getData();
 //              Scaffold.of(context).showSnackBar(SnackBar(content: Text("copy")));
 
-              
-              
              // ClipboardData data =await Clipboard.getData("text/plain");
 
 //            ClipboardManager.copyToClipBoard(user.text).then((result) {
@@ -81,6 +97,7 @@ void erase(){
 //              );
 //              Scaffold.of(context).showSnackBar(snackBar);
 //            });
+
           }
             ),
 
